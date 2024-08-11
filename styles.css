@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  font-weight: 500;
+  src: url("/assets/fonts/barlow-semi-condensed-v15-latin-500.woff2");
+}
+
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  font-weight: 600;
+  src: url("/assets/fonts/barlow-semi-condensed-v15-latin-600.woff2");
+}
+
+/* ------------------- CSS Reset ------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img,
+svg,
+picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ------------------- CSS Variables ------------------- */
+
+:root {
+  --ff-barlow: "Barlow Semi Condensed", sans-serif;
+
+  --fs-300: 0.75rem;
+  --fs-400: 0.875rem;
+  --fs-600: 1.25rem;
+
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsla(0, 0%, 100%, 0.7); /* Dark background font color*/
+  --clr-neutral-300: hsl(210, 46%, 95%);
+
+  --clr-primary-400: hsl(217, 19%, 35%);
+  --clr-primary-500: hsla(217, 19%, 35%, 0.7); /* Light background font color*/
+  --clr-primary-600: hsl(263, 55%, 52%);
+  --clr-primary-900: hsl(219, 29%, 14%);
+}
+
+body {
+  font-family: var(--ff-barlow);
+  font-size: var(--fs-400);
+  color: var(--clr-neutral-100);
+  background-color: grey;
+}
