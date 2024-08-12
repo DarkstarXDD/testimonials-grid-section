@@ -26,7 +26,6 @@ picture {
 }
 
 /* ------------------- CSS Variables ------------------- */
-
 :root {
   --ff-barlow: "Barlow Semi Condensed", sans-serif;
 
@@ -47,9 +46,69 @@ picture {
   --clr-primary-900: hsl(219, 29%, 14%);
 }
 
+/* ------------------- Utility Classes ------------------- */
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* ------------------- End of Utility Classes ------------------- */
+
 body {
   font-family: var(--ff-barlow);
   font-size: var(--fs-400);
+  text-align: start;
   color: var(--clr-neutral-100);
   background-color: grey;
+  padding: 4.375rem 1.5rem;
+}
+
+.component {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+  background-color: var(--clr-primary-600);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+}
+
+.card__profile-section {
+  display: grid;
+  grid-template-areas:
+    "avatar name"
+    "avatar status";
+  justify-content: start;
+  align-items: center;
+  gap: 0.25rem 1rem;
+}
+
+.card__avatar {
+  grid-area: avatar;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 100vw;
+}
+
+.card__verified-status {
+  font-size: var(--fs-300);
+  color: var(--clr-neutral-200);
+}
+
+.card__heading {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-semibold);
+}
+
+.card__testimonial {
+  color: var(--clr-neutral-200);
 }
