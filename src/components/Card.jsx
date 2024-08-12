@@ -1,16 +1,16 @@
-export default function Card({ avatar, name, isVerified, title, testimonial }) {
+export default function Card({ id, avatar, name, ...rest }) {
   return (
-    <div className="card">
+    <div className={`card ${id === 1 || id === 4 ? "grid-col-span-2" : ""}`}>
       <div className="card__profile-section">
         <img src={avatar} alt="" className="card__avatar" />
         <p className="card__name">{name}</p>
         <p className="card__verified-status">
-          {isVerified ? "Verified Graduate" : "Student"}
+          {rest.isVerified ? "Verified Graduate" : "Student"}
         </p>
       </div>
-      <h2 className="card__heading">{title}</h2>
+      <h2 className="card__heading">{rest.title}</h2>
       <blockquote className="card__testimonial">
-        {`” ${testimonial} ”`}
+        {`” ${rest.testimonial} ”`}
       </blockquote>
     </div>
   )

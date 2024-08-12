@@ -6,6 +6,7 @@ export default function App() {
     return (
       <Card
         key={currentItem.id}
+        id={currentItem.id}
         avatar={currentItem.avatar}
         name={currentItem.name}
         isVerified={currentItem.isVerified}
@@ -17,7 +18,7 @@ export default function App() {
 
   return (
     <main>
-      <div className="component">
+      <div className="testimonial-grid">
         <h1 className="visually-hidden">Testimonials</h1>
         {cardElements}
       </div>

@@ -58,6 +58,11 @@ picture {
 /* ------------------- End of Utility Classes ------------------- */
 
 body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-family: var(--ff-barlow);
   font-size: var(--fs-400);
   text-align: start;
@@ -66,7 +71,8 @@ body {
   padding: 4.375rem 1.5rem;
 }
 
-.component {
+.testimonial-grid {
+  max-width: 69.375rem;
   display: grid;
   gap: 1.5rem;
 }
@@ -74,7 +80,7 @@ body {
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: start;
   gap: 1rem;
   background-color: var(--clr-primary-600);
@@ -112,3 +118,33 @@ body {
 .card__testimonial {
   color: var(--clr-neutral-200);
 }
+
+@media (min-width: 48rem) {
+  .testimonial-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  /* .grid-col-span-2 {
+    grid-column: span 2;
+  }
+
+  .card:last-child {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  } */
+}
+
+/* @media (min-width: 48rem) {
+  .testimonial-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid-col-span-2 {
+    grid-column: span 2;
+  }
+
+  .card:last-child {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+} */
