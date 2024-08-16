@@ -3,9 +3,24 @@ import { motion, useReducedMotion, useInView } from "framer-motion"
 import { useRef } from "react"
 
 export default function Card({ id, avatar, name, ...rest }) {
-  let gridColSpanClass = id === 1 || id === 4 ? "grid-col-span-2" : ""
+  const gridColSpanClass = id === 1 || id === 4 ? "grid-col-span-2" : ""
+  const firstName = name.split(" ")[0].toLowerCase()
 
-  const cardClassNames = classNames("card", gridColSpanClass)
+  const cardClassNames = classNames(
+    "card",
+    `card--${firstName}`,
+    gridColSpanClass
+  )
+
+  const statusClassNames = classNames(
+    "card__status",
+    `card__status--${firstName}`
+  )
+
+  const testimonialClassNames = classNames(
+    "card__testimonial",
+    `card__testimonial--${firstName}`
+  )
 
   const isReducedMotion = useReducedMotion()
 
@@ -35,12 +50,12 @@ export default function Card({ id, avatar, name, ...rest }) {
         <div className="card__profile-section">
           <img src={avatar} alt="" className="card__avatar" />
           <p className="card__name">{name}</p>
-          <p className="card__verified-status">
+          <p className={statusClassNames}>
             {rest.isVerified ? "Verified Graduate" : "Student"}
           </p>
         </div>
         <h2 className="card__heading">{rest.title}</h2>
-        <blockquote className="card__testimonial">
+        <blockquote className={testimonialClassNames}>
           {`” ${rest.testimonial} ”`}
         </blockquote>
       </motion.div>
