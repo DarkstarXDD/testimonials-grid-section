@@ -133,6 +133,10 @@ body {
   border-radius: 100vw;
 }
 
+.card__name {
+  font-size: var(--fs-400);
+}
+
 .card__status {
   font-size: var(--fs-300);
   color: var(--clr-neutral-150);
@@ -143,7 +147,15 @@ body {
   color: var(--clr-primary-450);
 }
 
-.card__heading {
+.blockquotes {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+}
+
+.card__testimonial-summary {
   font-size: var(--fs-600);
   font-weight: var(--fw-semibold);
 }
