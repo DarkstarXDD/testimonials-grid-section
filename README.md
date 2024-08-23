@@ -20,6 +20,7 @@ This is my solution to the [Testimonials Grid Section](https://www.frontendmento
 ### Built with. 🔨
 
 - React.
+- Vanilla CSS.
 - Framer Motion.
 - Vite.
 
@@ -35,7 +36,7 @@ This is my solution to the [Testimonials Grid Section](https://www.frontendmento
 ### Features. ✨
 
 - Added some view based animations using Framer Motion.
-- Used the `useReduceMotion` hook to make sure that users who have reduced motion setting enabled don't see the animations, providing a smoother experience for them.
+- Used the `useReducedMotion` hook to make sure that users who have reduced motion setting enabled don't see the animations, providing a smoother experience for them.
 
 #
 
