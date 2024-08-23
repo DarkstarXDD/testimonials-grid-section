@@ -88,6 +88,11 @@ body {
 
 .card--daniel {
   background-color: var(--clr-primary-600);
+  background-image: url("/assets/images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top right 4.75rem;
+  background-blend-mode: soft-light;
+  background-size: 6.5rem;
 }
 
 .card--jonathan {
@@ -135,6 +140,8 @@ body {
 
 .card__name {
   font-size: var(--fs-400);
+  font-weight: var(--fw-medium);
+  font-weight: var(--fw-semibold);
 }
 
 .card__status {
@@ -181,7 +188,7 @@ body {
   }
 }
 
-@media (min-width: 70rem) {
+@media (min-width: 78rem) {
   .testimonial-grid {
     grid-template-columns: repeat(4, 1fr);
   }
