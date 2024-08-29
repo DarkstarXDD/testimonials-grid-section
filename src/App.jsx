@@ -17,7 +17,15 @@ export default function App() {
   })
 
   return (
-    <main>
+    <main className="main">
+      <div className="filter__wrapper">
+        <button className="filter__button filter__button--verified">
+          Verified Graduate
+        </button>
+        <button className="filter__button filter__button--student">
+          Student
+        </button>
+      </div>
       <div className="testimonial-grid">
         <h1 className="visually-hidden">Testimonials</h1>
         {cardElements}
