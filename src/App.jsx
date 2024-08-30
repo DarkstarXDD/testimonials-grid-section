@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom"
-import { FaCircleXmark } from "react-icons/fa6"
+import { FaCircleCheck, FaCircleXmark } from "react-icons/fa6"
 
 import Card from "./components/Card"
 import jsonData from "./data/data.json"
@@ -56,12 +56,18 @@ export default function App() {
             onClick={() => handleFilterChange("type", "verified")}
             className={`filter__button filter__button--verified ${currentTypeFilter === "verified" ? "filter__button--selected" : ""}`}
           >
+            {currentTypeFilter === "verified" && (
+              <FaCircleCheck className="filter__icon" />
+            )}
             Verified Graduate
           </button>
           <button
             onClick={() => handleFilterChange("type", "student")}
             className={`filter__button filter__button--student ${currentTypeFilter === "student" ? "filter__button--selected" : ""}`}
           >
+            {currentTypeFilter === "student" && (
+              <FaCircleCheck className="filter__icon" />
+            )}
             Student
           </button>
 
@@ -70,7 +76,7 @@ export default function App() {
               onClick={() => handleFilterChange("type", null)}
               className="filter__button filter__button--clear"
             >
-              <FaCircleXmark />
+              <FaCircleXmark className="filter__icon" />
               Clear filter
             </button>
           )}
