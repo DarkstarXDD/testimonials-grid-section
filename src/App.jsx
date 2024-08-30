@@ -1,8 +1,39 @@
+import { useSearchParams } from "react-router-dom"
+import { FaCircleXmark } from "react-icons/fa6"
+
 import Card from "./components/Card"
 import jsonData from "./data/data.json"
 
 export default function App() {
-  const cardElements = jsonData.map((currentItem) => {
+  const cardData = jsonData
+  const [searchParams, setSearchParams] = useSearchParams()
+  const currentTypeFilter = searchParams.get("type")
+
+  const filteredCardData = cardData.filter((card) => {
+    if (currentTypeFilter === "verified") {
+      return card.isVerified
+    } else if (currentTypeFilter === "student") {
+      return !card.isVerified
+    } else {
+      return card
+    }
+  })
+
+  function handleFilterChange(key, value) {
+    if (currentTypeFilter === value) {
+      return
+    }
+    setSearchParams((prevSearchParam) => {
+      if (value === null) {
+        prevSearchParam.delete(key)
+      } else {
+        prevSearchParam.set(key, value)
+      }
+      return prevSearchParam
+    })
+  }
+
+  const cardElements = filteredCardData.map((currentItem) => {
     return (
       <Card
         key={currentItem.id}
@@ -18,13 +49,32 @@ export default function App() {
 
   return (
     <main className="main">
-      <div className="filter__wrapper">
-        <button className="filter__button filter__button--verified">
-          Verified Graduate
-        </button>
-        <button className="filter__button filter__button--student">
-          Student
-        </button>
+      <div className="filter__outer-wrapper">
+        <p className="filter__label">Filter Type: </p>
+        <div className="filter__inner-wrapper">
+          <button
+            onClick={() => handleFilterChange("type", "verified")}
+            className={`filter__button filter__button--verified ${currentTypeFilter === "verified" ? "filter__button--selected" : ""}`}
+          >
+            Verified Graduate
+          </button>
+          <button
+            onClick={() => handleFilterChange("type", "student")}
+            className={`filter__button filter__button--student ${currentTypeFilter === "student" ? "filter__button--selected" : ""}`}
+          >
+            Student
+          </button>
+
+          {currentTypeFilter && (
+            <button
+              onClick={() => handleFilterChange("type", null)}
+              className="filter__button filter__button--clear"
+            >
+              <FaCircleXmark />
+              Clear filter
+            </button>
+          )}
+        </div>
       </div>
       <div className="testimonial-grid">
         <h1 className="visually-hidden">Testimonials</h1>
