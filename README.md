@@ -21,6 +21,7 @@ This is my solution to the [Testimonials Grid Section](https://www.frontendmento
 
 - React.
 - Vanilla CSS.
+- React Router (For testimonial filtering).
 - Framer Motion.
 - Vite.
 
@@ -35,19 +36,22 @@ This is my solution to the [Testimonials Grid Section](https://www.frontendmento
 
 ### Features. ✨
 
+- Added two buttons to filter testimonials based on whether they are from a verified graduate or a student.
 - Added some view based animations using Framer Motion.
-- Used the `useReducedMotion` hook to make sure that users who have reduced motion setting enabled don't see the animations, providing a smoother experience for them.
+- Used the `useReducedMotion` hook to make sure that users who have reduced motion setting enabled don't see the animations.
 
 #
 
 ### New Things Learned. 🎓
 
+- `useSearchParams` hook in React Router.
 - Using the Framer Motion Library.
 
 #
 
 ### Testing and Accessibility. 🧪
 
+- Tested site usability with keyboard-only navigation.
 - Used the Responsively App to check the site's appearance on various screen sizes, from 320x480 to 3000x2000.
 - Set the browser font size on desktop to various values ranging from 9px to 72px to ensure everything on the site scales properly with the user's preferred browser font size.
 - Zoomed the page in and out using Ctrl + Scroll wheel (up to 500%).
